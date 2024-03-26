@@ -74,6 +74,13 @@ public class User {
         this.score = score;
     }
 
+    public User(String username, String email, String phoneNumber, String password, int score) {
+        this.username = username;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.score = score;
+    }
     public User(Long userId, String username, String email, String phoneNumber, String password, int score) {
         this.userId = userId;
         this.username = username;

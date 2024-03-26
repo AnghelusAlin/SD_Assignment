@@ -19,13 +19,13 @@ public class UserController {
         return this.userService.retrieveUser();
     }
 
-    @PostMapping("/insertCourse")
+    @PostMapping("/insertUser")
     @ResponseBody
     public User insertUser(@RequestBody User user){
         return this.userService.insertUser(user);
     }
 
-    @PutMapping("/updateCourse")
+    @PutMapping("/updateUser")
     @ResponseBody
     public User updateUser(@RequestBody User user){
         return this.userService.insertUser(user);
@@ -34,6 +34,7 @@ public class UserController {
     @DeleteMapping("/deleteById")
     @ResponseBody
     public String deleteById(@RequestParam Long id){
+        System.out.println(id);
         return this.userService.deleteById(id);
     }
 

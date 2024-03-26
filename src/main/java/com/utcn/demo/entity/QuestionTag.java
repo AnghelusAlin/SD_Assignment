@@ -47,6 +47,12 @@ public class QuestionTag {
         this.question = question;
         this.tagId = tagId;
     }
+
+    public QuestionTag(Question question, Tag tagId) {
+        this.question = question;
+        this.tagId = tagId;
+    }
+
     public QuestionTag(){
 
     }

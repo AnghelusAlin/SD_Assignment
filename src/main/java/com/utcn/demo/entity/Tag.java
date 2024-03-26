@@ -33,6 +33,11 @@ public class Tag {
         this.tagId = tagId;
         this.text = text;
     }
+
+    public Tag(String text) {
+        this.text = text;
+    }
+
     public Tag(){}
 
 }

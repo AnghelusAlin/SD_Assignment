@@ -92,6 +92,24 @@ public class Answer {
 
     }
 
+    public Answer(Question question, Long user_id, String title, String text, LocalDateTime time, String image) {
+        this.question = question;
+        this.user_id = user_id;
+        this.title = title;
+        this.text = text;
+        this.time = time;
+        this.image = image;
+    }
+    public Answer(Question question, Long user_id, String title, String text, String image) {
+        this.question = question;
+        this.user_id = user_id;
+        this.title = title;
+        this.text = text;
+        LocalDateTime time = LocalDateTime.now();
+        this.time = time;
+        this.image = image;
+    }
+
     public Answer(Long answerId, Question question, Long user_id, String title, String text, LocalDateTime time, String image) {
         this.answerId = answerId;
         this.question = question;

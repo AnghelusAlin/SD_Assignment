@@ -77,6 +77,22 @@ public class Question {
         this.image = image;
     }
 
+    public Question(User user, String title, String text, LocalDateTime time, String image) {
+        this.user = user;
+        this.title = title;
+        this.text = text;
+        this.time = time;
+        this.image = image;
+    }
+    public Question(User user, String title, String text, String image) {
+        this.user = user;
+        this.title = title;
+        this.text = text;
+        LocalDateTime time = LocalDateTime.now();
+        this.time = time;
+        this.image = image;
+    }
+
     public Question(Long questionId, User user, String title, String text, LocalDateTime time, String image) {
         this.questionId = questionId;
         this.user = user;
