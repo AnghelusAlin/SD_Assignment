@@ -105,8 +105,7 @@ public class Answer {
         this.user_id = user_id;
         this.title = title;
         this.text = text;
-        LocalDateTime time = LocalDateTime.now();
-        this.time = time;
+        this.time = LocalDateTime.now();
         this.image = image;
     }
 

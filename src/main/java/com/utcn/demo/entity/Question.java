@@ -88,8 +88,7 @@ public class Question {
         this.user = user;
         this.title = title;
         this.text = text;
-        LocalDateTime time = LocalDateTime.now();
-        this.time = time;
+        this.time = LocalDateTime.now();
         this.image = image;
     }
 
@@ -102,6 +101,5 @@ public class Question {
         this.image = image;
     }
     public Question(){
-
     }
 }

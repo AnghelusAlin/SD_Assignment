@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "eba584a9-c287-4f9d-a6bc-f9a44a37978e",
+		"name": "SD Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26994537"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/users/getAll"
+					},
+					"response": []
+				},
+				{
+					"name": "Add new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"username\": \"Andrew Test\",\r\n        \"email\": \"andrewtest@gmail.com\",\r\n        \"phoneNumber\": \"+40712345678\",\r\n        \"password\": \"auauaua\",\r\n        \"score\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users/insertUser"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Andrew Changed\",\r\n    \"email\": \"andrewchanged@gmail.com\",\r\n    \"phoneNumber\": \"+40712345678\",\r\n    \"password\": \"auauaua\",\r\n    \"score\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users/updateUser"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/deleteById?id=4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"deleteById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "Get all questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/questions/getAll"
+					},
+					"response": []
+				},
+				{
+					"name": "Add new question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"user\": {\r\n            \"userId\": 1,\r\n            \"username\": \"John Overflow\",\r\n            \"email\": \"johnoverflow@yahoo.com\",\r\n            \"phoneNumber\": \"+40712345678\",\r\n            \"password\": \"auauaua\",\r\n            \"score\": 0\r\n        },\r\n        \"title\": \"John's Third Test Question\",\r\n        \"text\": \"Text of third test question\",\r\n        \"image\": \"https://picsum.photos/500\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/questions/insertQuestion"
+					},
+					"response": []
+				},
+				{
+					"name": "Update question",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionId\": 5,\r\n    \"user\": {\r\n        \"userId\": 1,\r\n        \"username\": \"John Overflow\",\r\n        \"email\": \"johnoverflow@yahoo.com\",\r\n        \"phoneNumber\": \"+40712345678\",\r\n        \"password\": \"auauaua\",\r\n        \"score\": 0\r\n    },\r\n    \"title\": \"John's Third Test Question\",\r\n    \"text\": \"Text of third test question\",\r\n    \"time\": \"2024-03-26T16:34:19\",\r\n    \"image\": \"https://picsum.photos/500\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/questions/updateQuestion"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete question by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/questions/deleteById?id=4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"questions",
+								"deleteById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Answer",
+			"item": [
+				{
+					"name": "Get all answers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/answers/getAll"
+					},
+					"response": []
+				},
+				{
+					"name": "Add new answer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"question\": {\r\n            \"questionId\": 1,\r\n            \"user\": {\r\n                \"userId\": 1,\r\n                \"username\": \"John Overflow\",\r\n                \"email\": \"johnoverflow@yahoo.com\",\r\n                \"phoneNumber\": \"+40712345678\",\r\n                \"password\": \"auauaua\",\r\n                \"score\": 0\r\n            },\r\n            \"title\": \"What\",\r\n            \"text\": \"What\",\r\n            \"time\": \"2024-03-26T14:30:23\",\r\n            \"image\": \"https://picsum.photos/300\"\r\n        },\r\n        \"user_id\": 2,\r\n        \"title\": \"Test Answer\",\r\n        \"text\": \"Test answer body\",\r\n        \"time\": \"2024-03-26T18:31:23\",\r\n        \"image\": \"https://picsum.photos/200\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/answers/insertAnswer"
+					},
+					"response": []
+				},
+				{
+					"name": "Update answer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"answerId\": 1,\r\n        \"question\": {\r\n            \"questionId\": 1,\r\n            \"user\": {\r\n                \"userId\": 1,\r\n                \"username\": \"John Overflow\",\r\n                \"email\": \"johnoverflow@yahoo.com\",\r\n                \"phoneNumber\": \"+40712345678\",\r\n                \"password\": \"auauaua\",\r\n                \"score\": 0\r\n            },\r\n            \"title\": \"What\",\r\n            \"text\": \"What\",\r\n            \"time\": \"2024-03-26T14:30:23\",\r\n            \"image\": \"https://picsum.photos/300\"\r\n        },\r\n        \"user_id\": 2,\r\n        \"title\": \"This\",\r\n        \"text\": \"Changed by update\",\r\n        \"time\": \"2024-03-26T14:31:23\",\r\n        \"image\": \"https://picsum.photos/200\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/answers/updateAnswer"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Answer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/answers/deleteById"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
