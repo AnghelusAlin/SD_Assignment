@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
 create table if not exists person
 (
     user_id      int auto_increment

@@ -12,7 +12,6 @@ import java.util.Optional;
 public class QuestionService {
     @Autowired
     private QuestionRepository questionRepository;
-
     public List<Question> retrieveQuestion(){
         return (List<Question>) this.questionRepository.findAll();
     }
@@ -35,5 +34,4 @@ public class QuestionService {
             return "Failed to delete question with id " + id;
         }
     }
-    //todo update
 }

@@ -12,25 +12,21 @@ import java.util.List;
 public class TagController {
     @Autowired
     private TagService tagService;
-
     @GetMapping("/getAll")
     @ResponseBody
     public List<Tag> retrieveAllTags(){
         return this.tagService.retrieveTag();
     }
-
     @PostMapping("/insertTag")
     @ResponseBody
     public Tag insertTag(@RequestBody Tag tag){
         return this.tagService.insertTag(tag);
     }
-
     @PutMapping("/updateTag")
     @ResponseBody
     public Tag updateTag(@RequestBody Tag tag){
         return this.tagService.insertTag(tag);
     }
-
     @DeleteMapping("deleteById")
     @ResponseBody
     public String deleteById(@RequestParam Long id){

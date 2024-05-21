@@ -12,25 +12,21 @@ import java.util.List;
 public class QuestionController {
     @Autowired
     private QuestionService questionService;
-
     @GetMapping("/getAll")
     @ResponseBody
     public List<Question> retrieveAllQuestions(){
         return this.questionService.retrieveQuestion();
     }
-
     @PostMapping("/insertQuestion")
     @ResponseBody
     public Question insertQuestion(@RequestBody Question question){
         return this.questionService.insertQuestion(question);
     }
-
     @PutMapping("/updateQuestion")
     @ResponseBody
     public Question updateQuestion(@RequestBody Question question){
         return this.questionService.insertQuestion(question);
     }
-
     @DeleteMapping("deleteById")
     @ResponseBody
     public String deleteById(@RequestParam Long id){

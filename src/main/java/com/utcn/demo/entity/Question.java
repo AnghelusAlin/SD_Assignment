@@ -7,25 +7,19 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "question")
 public class Question {
-
     @Id
     @Column(name = "question_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long questionId;
-
     @ManyToOne()
     @JoinColumn(name = "user_id")
     private User user;
-
     @Column(name = "title")
     private String title;
-
     @Column(name = "text")
     private String text;
-
     @Column(name = "time")
     private LocalDateTime time;
-
     @Column(name = "image")
     private String image;
 
