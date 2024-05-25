@@ -14,8 +14,9 @@ public class Answer {
     @ManyToOne()
     @JoinColumn(name = "question_id")
     private Question question;
-    @Column(name = "user_id")
-    private Long user_id;
+    @ManyToOne()
+    @JoinColumn(name = "user_id")
+    private User user;
     @Column(name = "title")
     private String title;
     @Column(name = "text")
@@ -37,11 +38,11 @@ public class Answer {
     public void setQuestion(Question question) {
         this.question = question;
     }
-    public Long getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
     public String getTitle() {
         return title;
@@ -68,26 +69,26 @@ public class Answer {
         this.image = image;
     }
     public Answer(){}
-    public Answer(Question question, Long user_id, String title, String text, LocalDateTime time, String image) {
+    public Answer(Question question, User user, String title, String text, LocalDateTime time, String image) {
         this.question = question;
-        this.user_id = user_id;
+        this.user = user;
         this.title = title;
         this.text = text;
         this.time = time;
         this.image = image;
     }
-    public Answer(Question question, Long user_id, String title, String text, String image) {
+    public Answer(Question question, User user, String title, String text, String image) {
         this.question = question;
-        this.user_id = user_id;
+        this.user = user;
         this.title = title;
         this.text = text;
         this.time = LocalDateTime.now();
         this.image = image;
     }
-    public Answer(Long answerId, Question question, Long user_id, String title, String text, LocalDateTime time, String image) {
+    public Answer(Long answerId, Question question, User user, String title, String text, LocalDateTime time, String image) {
         this.answerId = answerId;
         this.question = question;
-        this.user_id = user_id;
+        this.user = user;
         this.title = title;
         this.text = text;
         this.time = time;
