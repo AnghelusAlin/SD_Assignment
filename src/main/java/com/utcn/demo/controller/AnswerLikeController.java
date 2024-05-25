@@ -1,5 +1,6 @@
 package com.utcn.demo.controller;
 
+import com.utcn.demo.entity.Answer;
 import com.utcn.demo.entity.AnswerLike;
 import com.utcn.demo.service.AnswerLikeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,11 @@ public class AnswerLikeController {
     @ResponseBody
     public List<AnswerLike> retrieveAllAnswerLikes(){
         return this.answerLikeService.retrieveAnswerLikes();
+    }
+    @GetMapping("/getLikesOfAnswer")
+    @ResponseBody
+    public List<AnswerLike> retrieveLikesOfAnswer(@RequestBody Answer answer){
+        return this.answerLikeService.getLikesOfAnswer(answer);
     }
     @PostMapping("/insertAnswerLike")
     @ResponseBody
