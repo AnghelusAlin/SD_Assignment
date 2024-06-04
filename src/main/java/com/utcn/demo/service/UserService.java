@@ -24,6 +24,16 @@ public class UserService {
         user.setPassword(password);
         return this.userRepository.save(user);
     }
+    public User banUser(User user){
+        user.setBanned(true);
+        sendBannedMail(user);
+        return this.userRepository.save(user);
+    }
+
+    private void sendBannedMail(User user) {
+
+    }
+
     public User retrieveUserById(Long id){
         Optional<User> user = this.userRepository.findById(id);
         if(user.isPresent()){

@@ -20,19 +20,19 @@ public class User {
     @Column(name = "score")
     private int score;
     @Column(name = "moderator")
-    private boolean moderator;
+    private Boolean moderator;
     @Column(name = "banned")
-    private boolean banned;
-    private boolean getBanned(){
+    private Boolean banned;
+    public Boolean getBanned(){
         return banned;
     }
-    private void setBanned(boolean banned){
+    public void setBanned(Boolean banned){
         this.banned = banned;
     }
-    private boolean getModerator(){
+    public Boolean getModerator(){
         return moderator;
     }
-    private void setModerator(boolean moderator){
+    public void setModerator(Boolean moderator){
         this.moderator = moderator;
     }
     public Long getUserId() {
@@ -71,7 +71,7 @@ public class User {
     public void setScore(int score) {
         this.score = score;
     }
-    public User(String username, String email, String phoneNumber, String password, int score, boolean moderator, boolean banned) {
+    public User(String username, String email, String phoneNumber, String password, int score, Boolean moderator, Boolean banned) {
         this.username = username;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -80,7 +80,7 @@ public class User {
         this.moderator = moderator;
         this.banned = banned;
     }
-    public User(Long userId, String username, String email, String phoneNumber, String password, int score, boolean moderator, boolean banned) {
+    public User(Long userId, String username, String email, String phoneNumber, String password, int score, Boolean moderator, Boolean banned) {
         this.userId = userId;
         this.username = username;
         this.email = email;
