@@ -21,6 +21,14 @@ public class User {
     private int score;
     @Column(name = "moderator")
     private boolean moderator;
+    @Column(name = "banned")
+    private boolean banned;
+    private boolean getBanned(){
+        return banned;
+    }
+    private void setBanned(boolean banned){
+        this.banned = banned;
+    }
     private boolean getModerator(){
         return moderator;
     }
@@ -63,15 +71,16 @@ public class User {
     public void setScore(int score) {
         this.score = score;
     }
-    public User(String username, String email, String phoneNumber, String password, int score, boolean moderator) {
+    public User(String username, String email, String phoneNumber, String password, int score, boolean moderator, boolean banned) {
         this.username = username;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.score = score;
         this.moderator = moderator;
+        this.banned = banned;
     }
-    public User(Long userId, String username, String email, String phoneNumber, String password, int score, boolean moderator) {
+    public User(Long userId, String username, String email, String phoneNumber, String password, int score, boolean moderator, boolean banned) {
         this.userId = userId;
         this.username = username;
         this.email = email;
@@ -79,6 +88,7 @@ public class User {
         this.password = password;
         this.score = score;
         this.moderator = moderator;
+        this.banned = banned;
     }
     public User(){}
 }

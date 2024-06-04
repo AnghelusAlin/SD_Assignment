@@ -10,6 +10,9 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+    private String hash(String password){
+        return password;
+    }
     @Autowired
     private UserRepository userRepository;
 
@@ -17,6 +20,8 @@ public class UserService {
         return (List<User>) this.userRepository.findAll();
     }
     public User insertUser(User user){
+        String password = this.hash(user.getPassword());
+        user.setPassword(password);
         return this.userRepository.save(user);
     }
     public User retrieveUserById(Long id){
