@@ -31,10 +31,15 @@ public class UserController {
         }
         return banned;
     }
-    @PostMapping("/banUser")
+    @PutMapping("/banUser")
     @ResponseBody
     public User banUser(@RequestBody User user){
         return this.userService.banUser(user);
+    }
+    @PutMapping("/unbanUser")
+    @ResponseBody
+    public User unbanUser(@RequestBody User user){
+        return this.userService.unbanUser(user);
     }
     @PostMapping("/insertUser")
     @ResponseBody

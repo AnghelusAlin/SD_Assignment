@@ -14,6 +14,8 @@ public class UserService {
         return password;
     }
     @Autowired
+    private EmailSenderService emailSenderService;
+    @Autowired
     private UserRepository userRepository;
 
     public List<User> retrieveUser(){
@@ -26,12 +28,13 @@ public class UserService {
     }
     public User banUser(User user){
         user.setBanned(true);
-        sendBannedMail(user);
+        this.emailSenderService.sendBannedEmail(user);
         return this.userRepository.save(user);
     }
-
-    private void sendBannedMail(User user) {
-
+    public User unbanUser(User user){
+        user.setBanned(false);
+        this.emailSenderService.sendBannedEmail(user);
+        return this.userRepository.save(user);
     }
 
     public User retrieveUserById(Long id){
