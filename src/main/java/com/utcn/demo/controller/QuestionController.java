@@ -17,6 +17,11 @@ public class QuestionController {
     public List<Question> retrieveAllQuestions(){
         return this.questionService.retrieveQuestion();
     }
+    @GetMapping("/getQuestionById")
+    @ResponseBody
+    public Question retrieveQuestionById(@RequestParam Long id){
+        return this.questionService.retrieveQuestionById(id);
+    }
     @PostMapping("/insertQuestion")
     @ResponseBody
     public Question insertQuestion(@RequestBody Question question){

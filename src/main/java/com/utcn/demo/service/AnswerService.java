@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AnswerService {
@@ -26,6 +27,16 @@ public class AnswerService {
         }catch(Exception e){
             return "Failed to delete answer with id " + id;
         }
+    }
+
+    public List<Answer> getAnswersOfQuestion(Long questionId) {
+        List<Answer> allAnswers = (List<Answer>) answerRepository.findAll();
+
+        List<Answer> answersOfQuestion = allAnswers.stream()
+                .filter(answer -> answer.getQuestion().getQuestionId().equals(questionId))
+                .collect(Collectors.toList());
+
+        return answersOfQuestion;
     }
     //todo update
 }

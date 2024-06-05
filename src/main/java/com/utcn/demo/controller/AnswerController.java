@@ -17,6 +17,11 @@ public class AnswerController {
     public List<Answer> retrieveAllAnswers(){
         return this.answerService.retrieveAnswer();
     }
+    @GetMapping("/question/{questionId}")
+    @ResponseBody
+    public List<Answer> getAnswersOfQuestion(@PathVariable Long questionId) {
+        return answerService.getAnswersOfQuestion(questionId);
+    }
     @PostMapping("/insertAnswer")
     @ResponseBody
     public Answer insertAnswer(@RequestBody Answer answer){

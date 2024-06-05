@@ -17,11 +17,16 @@ public class TagController {
     public List<Tag> retrieveAllTags(){
         return this.tagService.retrieveTag();
     }
+    @GetMapping("/getTagsOfQuestion/{id}")
+    public List<Tag> retrieveTagsOfQuestion(@PathVariable Long id){
+        return this.tagService.retrieveTagOfQuestion(id);
+    }
     @PostMapping("/insertTag")
     @ResponseBody
     public Tag insertTag(@RequestBody Tag tag){
         return this.tagService.insertTag(tag);
     }
+
     @PutMapping("/updateTag")
     @ResponseBody
     public Tag updateTag(@RequestBody Tag tag){
